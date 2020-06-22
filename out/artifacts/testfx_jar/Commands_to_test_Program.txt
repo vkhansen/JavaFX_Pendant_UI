@@ -1,0 +1,1 @@
+ java -cp .\testfx.jar sample.Main

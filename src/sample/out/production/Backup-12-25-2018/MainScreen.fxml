@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="border" fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" stylesheets="@GeneralStyle.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <opaqueInsets>
+      <Insets top="10.0" />
+   </opaqueInsets>
+   <padding>
+      <Insets left="10.0" />
+   </padding>
+   <bottom>
+      <VBox prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="30.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="77.0" stylesheets="@GeneralStyle.css" text="X (mm):" />
+                  <Label fx:id="XAxis" layoutX="30.0" layoutY="30.0" prefHeight="27.0" prefWidth="84.0" stylesheets="@GeneralStyle.css" text="XXXX.XX" />
+                  <Label layoutX="30.0" layoutY="30.0" prefHeight="27.0" prefWidth="71.0" stylesheets="@GeneralStyle.css" text="Y (mm):" />
+                  <Label fx:id="YAxis" layoutX="139.0" layoutY="30.0" prefHeight="27.0" prefWidth="83.0" stylesheets="@GeneralStyle.css" text="XXXX.XX" />
+                  <Label layoutX="203.0" layoutY="20.0" prefHeight="27.0" prefWidth="71.0" stylesheets="@GeneralStyle.css" text="Z (mm):" />
+                  <Label fx:id="ZAxis" layoutX="308.0" layoutY="20.0" prefHeight="27.0" prefWidth="82.0" stylesheets="@GeneralStyle.css" text="XXXX.XX" />
+                  <Label layoutX="562.0" layoutY="20.0" prefHeight="27.0" prefWidth="75.0" stylesheets="@GeneralStyle.css" text="A (Deg):" />
+                  <Label fx:id="AAxis" layoutX="667.0" layoutY="20.0" prefHeight="27.0" prefWidth="91.0" stylesheets="@GeneralStyle.css" text="XXX.XXXX" />
+                  <Label layoutX="741.0" layoutY="20.0" prefHeight="27.0" prefWidth="73.0" stylesheets="@GeneralStyle.css" text="B (Deg):" />
+                  <Label fx:id="BAxis" layoutX="846.0" layoutY="20.0" prefHeight="27.0" prefWidth="91.0" stylesheets="@GeneralStyle.css" text="XXX.XXXX" />
+                  <Label layoutX="919.0" layoutY="20.0" prefHeight="27.0" prefWidth="72.0" stylesheets="@GeneralStyle.css" text="C (Deg):" />
+                  <Label fx:id="CAxis" layoutX="1025.0" layoutY="20.0" prefHeight="27.0" prefWidth="91.0" stylesheets="@GeneralStyle.css" text="XXX.XXXX" />
+                  <Label layoutX="874.0" layoutY="20.0" prefHeight="27.0" prefWidth="53.0" stylesheets="@GeneralStyle.css" text="Error:" />
+                  <Label fx:id="Error_State" layoutX="951.0" layoutY="20.0" prefHeight="27.0" prefWidth="57.0" stylesheets="@GeneralStyle.css" text="000" />
+                  <Label layoutX="1043.0" layoutY="15.0" prefHeight="27.0" prefWidth="57.0" stylesheets="@GeneralStyle.css" text="Mode:" />
+                  <Label fx:id="Mode_State" layoutX="1102.0" layoutY="15.0" prefHeight="27.0" prefWidth="45.0" stylesheets="@GeneralStyle.css" text="0" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="93.0" stylesheets="@GeneralStyle.css" text="MT1(Deg):" />
+                  <Label fx:id="MT1Axis" layoutX="20.0" layoutY="20.0" prefHeight="27.0" prefWidth="87.0" stylesheets="@GeneralStyle.css" text="XXXX.XX" />
+                  <Label layoutX="20.0" layoutY="20.0" prefHeight="27.0" prefWidth="48.0" stylesheets="@GeneralStyle.css" text="MT2:" />
+                  <Label fx:id="MT2Axis" layoutX="109.0" layoutY="20.0" prefHeight="27.0" prefWidth="92.0" stylesheets="@GeneralStyle.css" text="XXX.XXXX" />
+                  <Label layoutX="205.0" layoutY="20.0" prefHeight="27.0" prefWidth="50.0" stylesheets="@GeneralStyle.css" text="MT3:" />
+                  <Label fx:id="MT3Axis" layoutX="294.0" layoutY="20.0" prefHeight="27.0" prefWidth="93.0" stylesheets="@GeneralStyle.css" text="XXX.XXXX" />
+                  <Label layoutX="389.0" layoutY="20.0" prefHeight="27.0" prefWidth="45.0" stylesheets="@GeneralStyle.css" text="MT4:" />
+                  <Label fx:id="MT4Axis" layoutX="479.0" layoutY="20.0" prefHeight="27.0" prefWidth="91.0" stylesheets="@GeneralStyle.css" text="XXX.XXXX" />
+                  <Label layoutX="574.0" layoutY="20.0" prefHeight="27.0" prefWidth="47.0" stylesheets="@GeneralStyle.css" text="MT5:" />
+                  <Label fx:id="MT5Axis" layoutX="663.0" layoutY="20.0" prefHeight="27.0" prefWidth="95.0" stylesheets="@GeneralStyle.css" text="XXX.XXXX" />
+                  <Label layoutX="759.0" layoutY="20.0" prefHeight="27.0" prefWidth="48.0" stylesheets="@GeneralStyle.css" text="MT6:" />
+                  <Label fx:id="MT6Axis" layoutX="848.0" layoutY="20.0" prefHeight="27.0" prefWidth="95.0" stylesheets="@GeneralStyle.css" text="XXX.XXXX" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="108.0" text="FeedRate:" />
+                  <Slider fx:id="FeedRateSlider" prefHeight="27.0" prefWidth="642.0" />
+                  <Label fx:id="FeedRateDisplay" prefHeight="27.0" prefWidth="41.0" text="XX" />
+                  <Label text="\%" />
+                  <Label text="Jog Increment:">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <TextField fx:id="JogIncrement" prefHeight="37.0" prefWidth="119.0" stylesheets="@GeneralStyle.css" text="1.0" />
+                  <Label text="(Deg OR MM)">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="CommandLabelLog" prefHeight="27.0" prefWidth="1267.0" text="LAST COMMAND SENT" />
+         </children>
+      </VBox>
+   </bottom>
+   <left>
+      <StackPane fx:id="LeftStack" prefHeight="150.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="LeftMainVbox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="150.0" spacing="10.0" stylesheets="@GeneralStyle.css">
+               <children>
+                  <Button fx:id="BLeadThrough" mnemonicParsing="false" onAction="#LeadThrough" prefHeight="100.0" prefWidth="150.0" stylesheets="@GeneralStyle.css" text="Leadthrough">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" stylesheets="@GeneralStyle.css" text="Script File (RSF)">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" stylesheets="@GeneralStyle.css" text="Select/Convert">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" stylesheets="@GeneralStyle.css" text="Load File">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" stylesheets="@GeneralStyle.css" text="Output/Load">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" stylesheets="@GeneralStyle.css" text="Parameter">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="Exit_Button" mnemonicParsing="false" onAction="#Exit_Program" prefHeight="100.0" prefWidth="150.0" stylesheets="@GeneralStyle.css" text="Exit">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </left>
+   <right>
+      <StackPane fx:id="RightStack" prefHeight="150.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="RightMainVbox" prefHeight="100.0" prefWidth="200.0" spacing="10.0" stylesheets="@GeneralStyle.css">
+               <children>
+                  <ToggleButton fx:id="JogToggleButton" mnemonicParsing="false" onAction="#JogAxisMode" prefHeight="100.0" prefWidth="200.0" text="Jog Axis">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="JogToggleGroup" />
+                     </toggleGroup></ToggleButton>
+                  <ToggleButton fx:id="JointToggleButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#JointAxisMode" prefHeight="100.0" prefWidth="200.0" text="Move Joint" toggleGroup="$JogToggleGroup" />
+                  <Button fx:id="HomeButton" layoutX="10.0" layoutY="134.0" mnemonicParsing="false" onAction="#DisplayHome" prefHeight="100.0" prefWidth="200.0" stylesheets="@GeneralStyle.css" text="Home" />
+                  <Button fx:id="ToBeginButton" mnemonicParsing="false" onAction="#toBegin" prefHeight="100.0" prefWidth="200.0" stylesheets="@GeneralStyle.css" text="To Begin" />
+                  <Button mnemonicParsing="false" onAction="#toZero" prefHeight="100.0" prefWidth="200.0" stylesheets="@GeneralStyle.css" text="To Zero" />
+                  <Button fx:id="MCodeTest" mnemonicParsing="false" onAction="#PrintMcodeString" prefHeight="100.0" prefWidth="200.0" stylesheets="@GeneralStyle.css" text="MCode List" />
+                  <Button fx:id="EStopButton" mnemonicParsing="false" onAction="#Estop" prefHeight="100.0" prefWidth="200.0" stylesheets="@GeneralStyle.css" text="Emergency Stop" />
+               </children>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </StackPane>
+   </right>
+   <top>
+      <StackPane fx:id="TopStack" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="MainTopVbox">
+               <children>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label stylesheets="@GeneralStyle.css" text="Remote IP:" />
+                        <TextField fx:id="TargetIP" prefHeight="19.0" prefWidth="170.0" stylesheets="@GeneralStyle.css" text="127.0.0.1" />
+                        <Label layoutX="10.0" layoutY="10.0" stylesheets="@GeneralStyle.css" text="Target Port:" />
+                        <TextField fx:id="TargetPort" layoutX="103.0" layoutY="10.0" prefHeight="23.0" prefWidth="70.0" stylesheets="@GeneralStyle.css" text="5000" />
+                        <Label layoutX="20.0" layoutY="20.0" stylesheets="@GeneralStyle.css" text="Source IP:" />
+                        <TextField fx:id="SourceIP" layoutX="123.0" layoutY="20.0" prefHeight="20.0" prefWidth="170.0" stylesheets="@GeneralStyle.css" text="127.0.0.1" />
+                        <Label layoutX="281.0" layoutY="20.0" stylesheets="@GeneralStyle.css" text="Source Port:" />
+                        <TextField fx:id="SourcePort" layoutX="393.0" layoutY="20.0" prefHeight="25.0" prefWidth="70.0" stylesheets="@GeneralStyle.css" text="42" />
+                        <Button fx:id="AdminModeButton" mnemonicParsing="false" onAction="#AdminDialog" prefHeight="30.0" prefWidth="126.0" text="Admin Mode">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Label fx:id="AdminLabel" text="Disabled" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <StackPane fx:id="TopSPane2">
+                     <children>
+                        <FlowPane fx:id="AxisJogToPosition" hgap="30.0" visible="false">
+                           <children>
+                              <Label text="X:" />
+                              <TextField fx:id="TPX" prefHeight="37.0" prefWidth="96.0" text="0.0" />
+                              <Label layoutX="10.0" layoutY="15.0" text="Y:" />
+                              <TextField fx:id="TPY" layoutX="27.0" layoutY="10.0" prefHeight="37.0" prefWidth="96.0" text="0.0" />
+                              <Label layoutX="123.0" layoutY="15.0" text="Z:" />
+                              <TextField fx:id="TPZ" layoutX="141.0" layoutY="10.0" prefHeight="37.0" prefWidth="96.0" text="0.0" />
+                              <Label layoutX="237.0" layoutY="15.0" text="A:" />
+                              <TextField fx:id="TPA" layoutX="254.0" layoutY="10.0" prefHeight="37.0" prefWidth="96.0" text="0.0" />
+                              <Label layoutX="350.0" layoutY="15.0" text="B:" />
+                              <TextField fx:id="TPB" layoutX="367.0" layoutY="10.0" prefHeight="37.0" prefWidth="96.0" text="0.0" />
+                              <Label layoutX="463.0" layoutY="15.0" text="C:" />
+                              <TextField fx:id="TPC" layoutX="481.0" layoutY="10.0" prefHeight="37.0" prefWidth="96.0" text="0.0" />
+                              <Button mnemonicParsing="false" onAction="#JogToPosition" text="Jog To Position" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </StackPane.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </FlowPane>
+                        <FlowPane fx:id="JointJogToPosition" hgap="20.0" layoutX="20.0" layoutY="20.0">
+                           <children>
+                              <Label text="MT1:" />
+                              <TextField fx:id="TPMT1" prefHeight="37.0" prefWidth="96.0" text="0.0" />
+                              <Label layoutX="10.0" layoutY="15.0" text="MT2:" />
+                              <TextField fx:id="TPMT2" layoutX="27.0" layoutY="10.0" prefHeight="37.0" prefWidth="96.0" text="0.0" />
+                              <Label layoutX="123.0" layoutY="15.0" text="MT3:" />
+                              <TextField fx:id="TPMT3" layoutX="141.0" layoutY="10.0" prefHeight="37.0" prefWidth="96.0" text="0.0" />
+                              <Label layoutX="237.0" layoutY="15.0" text="MT4:" />
+                              <TextField fx:id="TPMT4" layoutX="254.0" layoutY="10.0" prefHeight="37.0" prefWidth="96.0" text="0.0" />
+                              <Label layoutX="350.0" layoutY="15.0" text="MT5:" />
+                              <TextField fx:id="TPMT5" layoutX="367.0" layoutY="10.0" prefHeight="37.0" prefWidth="96.0" text="0.0" />
+                              <Label layoutX="463.0" layoutY="15.0" text="MT6:" />
+                              <TextField fx:id="TPMT6" layoutX="481.0" layoutY="10.0" prefHeight="37.0" prefWidth="96.0" text="0.0" />
+                              <Button mnemonicParsing="false" onAction="#JointToPosition" text="Joint To Position" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <StackPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </StackPane.margin>
+                        </FlowPane>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </top>
+   <center>
+      <StackPane fx:id="CenterStack" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="LeadThroughParentVBox">
+               <children>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="138.0" text="File Save Path:" />
+                        <Label fx:id="FilePathLabelDisplay" prefHeight="27.0" prefWidth="661.0" text="DEFAULT FILE PATH" />
+                        <Button fx:id="ExitLeadThrough" mnemonicParsing="false" onAction="#ExitLeadThrough" prefHeight="30.0" prefWidth="150.0" text="Exit LeadThrough" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="297.0" prefWidth="970.0">
+                     <children>
+                        <TabPane fx:id="LeadThroughTabs" prefHeight="273.0" prefWidth="633.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="LTCircleTab" text="Circle (G02)">
+                                 <content>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="BStartCircle" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#StartCircle" text="Start Circle" />
+                                          <Button fx:id="BCircleP1" disable="true" layoutX="13.0" layoutY="57.0" mnemonicParsing="false" onAction="#AddCircleP1" prefHeight="30.0" prefWidth="93.0" text="Add #1" />
+                                          <Label fx:id="CP1Label" layoutX="124.0" layoutY="54.0" prefHeight="17.0" prefWidth="491.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #1">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="BCircleP2" disable="true" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" onAction="#AddCircleP2" prefHeight="30.0" prefWidth="93.0" text="Add #2" />
+                                          <Label fx:id="CP2Label" layoutX="122.0" layoutY="100.0" prefHeight="8.0" prefWidth="496.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #2">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="BCircleP3" disable="true" layoutX="14.0" layoutY="146.0" mnemonicParsing="false" onAction="#AddCircleP3" prefHeight="30.0" prefWidth="93.0" text="Add #3" />
+                                          <Label fx:id="CP3Label" layoutX="121.0" layoutY="143.0" prefHeight="4.0" prefWidth="497.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #3">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="BCircleP4" disable="true" layoutX="13.0" layoutY="188.0" mnemonicParsing="false" onAction="#AddCircleP4" prefHeight="30.0" prefWidth="93.0" text="Add #4" />
+                                          <Label fx:id="CP4Label" layoutX="122.0" layoutY="185.0" prefHeight="0.0" prefWidth="495.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #4">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="BEndCircle" disable="true" layoutX="442.0" layoutY="7.0" mnemonicParsing="false" onAction="#EndCircle" prefHeight="30.0" prefWidth="183.0" text="Complete Circle" />
+                                          <Label fx:id="CP1LabelM" layoutX="124.0" layoutY="73.0" prefHeight="17.0" prefWidth="491.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#1">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="CP2LabelM" layoutX="122.0" layoutY="119.0" prefHeight="8.0" prefWidth="496.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#2">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="CP3LabelM" layoutX="121.0" layoutY="162.0" prefHeight="4.0" prefWidth="497.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#3">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="CP4LabelM" layoutX="122.0" layoutY="204.0" prefHeight="0.0" prefWidth="495.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#4">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </content></Tab>
+                            <Tab fx:id="LTCurveTab" text="Curve">
+                                 <content>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="BStartCurve" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#StartCurve" text="Start Curve" />
+                                          <Button fx:id="BEndCurve" disable="true" layoutX="440.0" layoutY="7.0" mnemonicParsing="false" onAction="#EndCurve" prefHeight="30.0" prefWidth="185.0" text="Complete Curve" />
+                                          <Button fx:id="BCurveP1" disable="true" layoutX="14.0" layoutY="65.0" mnemonicParsing="false" onAction="#AddCurveP1" prefHeight="30.0" prefWidth="93.0" text="Add #1" />
+                                          <Button fx:id="BCurveP2" disable="true" layoutX="14.0" layoutY="122.0" mnemonicParsing="false" onAction="#AddCurveP2" prefHeight="30.0" prefWidth="93.0" text="Add #2" />
+                                          <Button fx:id="BCurveP3" disable="true" layoutX="14.0" layoutY="183.0" mnemonicParsing="false" onAction="#AddCurveP3" prefHeight="30.0" prefWidth="93.0" text="Add #3" />
+                                          <Label fx:id="CvP1Label" layoutX="123.0" layoutY="55.0" prefHeight="17.0" prefWidth="491.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #1">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="CvP2Label" layoutX="121.0" layoutY="113.0" prefHeight="8.0" prefWidth="496.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #2">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="CvP3Label" layoutX="120.0" layoutY="177.0" prefHeight="4.0" prefWidth="497.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #3">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="CvP1LabelM" layoutX="123.0" layoutY="85.0" prefHeight="17.0" prefWidth="491.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#1">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="CvP2LabelM" layoutX="121.0" layoutY="142.0" prefHeight="8.0" prefWidth="496.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#2">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="CvP3LabelM" layoutX="120.0" layoutY="203.0" prefHeight="4.0" prefWidth="497.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#3">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </content></Tab>
+                              <Tab fx:id="LTLineTab" text="Line (G01)">
+                                 <content>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="BStartLine" layoutX="13.0" layoutY="9.0" mnemonicParsing="false" onAction="#StartLine" prefHeight="30.0" prefWidth="95.0" text="Start Line" />
+                                          <Button fx:id="BLineP1" disable="true" layoutX="14.0" layoutY="54.0" mnemonicParsing="false" onAction="#AddLineP1" prefHeight="30.0" prefWidth="93.0" text="Add #1" />
+                                          <Button fx:id="BLineP2" disable="true" layoutX="14.0" layoutY="112.0" mnemonicParsing="false" onAction="#AddLineP2" prefHeight="30.0" prefWidth="93.0" text="Add #2" />
+                                          <Button fx:id="BLineP3" disable="true" layoutX="14.0" layoutY="170.0" mnemonicParsing="false" onAction="#AddLineP3" prefHeight="30.0" prefWidth="93.0" text="Add #3 (N)" />
+                                          <Button fx:id="BEndLine" disable="true" layoutX="453.0" layoutY="9.0" mnemonicParsing="false" onAction="#EndLine" prefHeight="30.0" prefWidth="166.0" text="Complete Line" />
+                                          <Label layoutX="14.0" layoutY="209.0" prefHeight="27.0" prefWidth="312.0" text="Point (N) may be added N times" />
+                                          <Label fx:id="LineP1Label" layoutX="121.0" layoutY="44.0" prefHeight="17.0" prefWidth="491.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #1">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="LineP2Label" layoutX="121.0" layoutY="102.0" prefHeight="8.0" prefWidth="496.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #2">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="LineP3Label" layoutX="118.0" layoutY="160.0" prefHeight="4.0" prefWidth="497.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #3">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="LineP1LabelM" layoutX="121.0" layoutY="69.0" prefHeight="17.0" prefWidth="491.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#1">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="LineP2LabelM" layoutX="121.0" layoutY="127.0" prefHeight="8.0" prefWidth="496.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#2">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="LineP3LabelM" layoutX="118.0" layoutY="185.0" prefHeight="4.0" prefWidth="497.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#3">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                       </children></AnchorPane>
+                                 </content></Tab>
+                              <Tab fx:id="LTRapidTab" text="Rapid (G00)">
+                                 <content>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="BStartRapid" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#StartRapid" text="Start Rapid" />
+                                          <Button fx:id="BRapidP1" disable="true" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#AddRapidP1" prefHeight="30.0" prefWidth="93.0" text="Add #1" />
+                                          <Button fx:id="BRapidP2" disable="true" layoutX="14.0" layoutY="96.0" mnemonicParsing="false" onAction="#AddRapidP2" prefHeight="30.0" prefWidth="93.0" text="Add #2" />
+                                          <Button fx:id="BRapidP3" disable="true" layoutX="14.0" layoutY="142.0" mnemonicParsing="false" onAction="#AddRapidP3" prefHeight="30.0" prefWidth="93.0" text="Add #3" />
+                                          <Button fx:id="BRapidP4" disable="true" layoutX="14.0" layoutY="185.0" mnemonicParsing="false" onAction="#AddRapidP4" prefHeight="30.0" prefWidth="93.0" text="Add #4" />
+                                          <Label fx:id="RapidP1Label" layoutX="121.0" layoutY="52.0" prefHeight="17.0" prefWidth="491.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #1">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="RapidP2Label" layoutX="119.0" layoutY="96.0" prefHeight="8.0" prefWidth="496.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #2">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="RapidP3Label" layoutX="118.0" layoutY="142.0" prefHeight="4.0" prefWidth="497.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #3">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="RapidP4Label" layoutX="119.0" layoutY="181.0" prefHeight="0.0" prefWidth="495.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Point #4">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="RapidP1LabelM" layoutX="121.0" layoutY="67.0" prefHeight="17.0" prefWidth="491.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#1">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="RapidP2LabelM" layoutX="119.0" layoutY="116.0" prefHeight="8.0" prefWidth="496.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#2">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="RapidP3LabelM" layoutX="118.0" layoutY="157.0" prefHeight="4.0" prefWidth="497.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#3">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="RapidP4LabelM" layoutX="119.0" layoutY="200.0" prefHeight="0.0" prefWidth="495.0" styleClass="labelCoordinate" stylesheets="@ExtraCSS.css" text="Mcodes#4">
+                                             <font>
+                                                <Font size="6.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="BEndRapid" disable="true" layoutX="459.0" layoutY="7.0" mnemonicParsing="false" onAction="#EndRapid" prefHeight="30.0" prefWidth="159.0" text="Complete Rapid" />
+                                       </children></AnchorPane>
+                                 </content></Tab>
+                          </tabs>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TabPane>
+                        <ScrollPane fx:id="MCodeScrollPane" prefHeight="250.0" prefWidth="323.0">
+                           <content>
+                              <FlowPane fx:id="MCodeFlowPane" hgap="10.0" minWidth="5.0" prefHeight="414.0" prefWidth="271.0" vgap="8.0">
+                                 <children>
+                                    <CheckBox fx:id="M01" mnemonicParsing="false" onAction="#McodeEdit" text="M01" />
+                                    <CheckBox fx:id="M02" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#McodeEdit" text="M02" />
+                                    <CheckBox fx:id="M03" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#McodeEdit" text="M03" />
+                                    <CheckBox fx:id="M04" layoutX="49.0" layoutY="10.0" mnemonicParsing="false" onAction="#McodeEdit" text="M04" />
+                                    <CheckBox fx:id="M05" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#McodeEdit" text="M05" />
+                                    <CheckBox fx:id="M06" layoutX="49.0" layoutY="10.0" mnemonicParsing="false" onAction="#McodeEdit" text="M06" />
+                                    <CheckBox fx:id="M07" layoutX="89.0" layoutY="10.0" mnemonicParsing="false" onAction="#McodeEdit" text="M07" />
+                                    <CheckBox fx:id="M08" layoutX="128.0" layoutY="10.0" mnemonicParsing="false" onAction="#McodeEdit" text="M08" />
+                                    <CheckBox fx:id="M09" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#McodeEdit" text="M09" />
+                                    <CheckBox fx:id="M10" layoutX="63.0" layoutY="15.0" mnemonicParsing="false" onAction="#McodeEdit" text="M10" />
+                                    <CheckBox fx:id="M11" layoutX="110.0" layoutY="15.0" mnemonicParsing="false" onAction="#McodeEdit" text="M11" />
+                                    <CheckBox fx:id="M12" layoutX="157.0" layoutY="15.0" mnemonicParsing="false" onAction="#McodeEdit" text="M12" />
+                                    <CheckBox fx:id="M13" layoutX="205.0" layoutY="15.0" mnemonicParsing="false" onAction="#McodeEdit" text="M13" />
+                                    <CheckBox fx:id="M14" layoutX="63.0" layoutY="35.0" mnemonicParsing="false" onAction="#McodeEdit" text="M14" />
+                                    <CheckBox fx:id="M15" layoutX="110.0" layoutY="35.0" mnemonicParsing="false" onAction="#McodeEdit" text="M15" />
+                                    <CheckBox fx:id="M16" layoutX="226.0" layoutY="41.0" mnemonicParsing="false" onAction="#McodeEdit" text="M16" />
+                                    <CheckBox fx:id="M17" layoutX="137.0" layoutY="66.0" mnemonicParsing="false" onAction="#McodeEdit" text="M17" />
+                                    <CheckBox fx:id="M18" layoutX="137.0" layoutY="91.0" mnemonicParsing="false" onAction="#McodeEdit" text="M18" />
+                                    <CheckBox fx:id="M19" layoutX="15.0" layoutY="117.0" mnemonicParsing="false" onAction="#McodeEdit" text="M19" />
+                                    <CheckBox fx:id="M20" layoutX="76.0" layoutY="117.0" mnemonicParsing="false" onAction="#McodeEdit" text="M20" />
+                                    <CheckBox fx:id="M21" layoutX="137.0" layoutY="117.0" mnemonicParsing="false" onAction="#McodeEdit" text="M21" />
+                                    <CheckBox fx:id="M22" layoutX="197.0" layoutY="117.0" mnemonicParsing="false" onAction="#McodeEdit" text="M22" />
+                                    <CheckBox fx:id="M23" layoutX="76.0" layoutY="142.0" mnemonicParsing="false" onAction="#McodeEdit" text="M23" />
+                                    <CheckBox fx:id="M24" layoutX="137.0" layoutY="142.0" mnemonicParsing="false" onAction="#McodeEdit" text="M24" />
+                                    <CheckBox fx:id="M25" layoutX="197.0" layoutY="142.0" mnemonicParsing="false" onAction="#McodeEdit" text="M25" />
+                                    <CheckBox fx:id="M26" layoutX="15.0" layoutY="167.0" mnemonicParsing="false" onAction="#McodeEdit" text="M26" />
+                                    <CheckBox fx:id="M27" layoutX="15.0" layoutY="66.0" mnemonicParsing="false" onAction="#McodeEdit" text="M27" />
+                                    <CheckBox fx:id="M28" layoutX="76.0" layoutY="66.0" mnemonicParsing="false" onAction="#McodeEdit" text="M28" />
+                                    <CheckBox fx:id="M29" layoutX="197.0" layoutY="66.0" mnemonicParsing="false" onAction="#McodeEdit" text="M29" />
+                                    <CheckBox fx:id="M30" layoutX="15.0" layoutY="91.0" mnemonicParsing="false" onAction="#McodeEdit" text="M30" />
+                                    <CheckBox fx:id="M31" layoutX="197.0" layoutY="91.0" mnemonicParsing="false" onAction="#McodeEdit" text="M31" />
+                                    <CheckBox fx:id="M32" layoutX="15.0" layoutY="142.0" mnemonicParsing="false" onAction="#McodeEdit" text="M32" />
+                                    <CheckBox fx:id="M33" layoutX="76.0" layoutY="91.0" mnemonicParsing="false" onAction="#McodeEdit" text="M33" />
+                                    <CheckBox fx:id="M34" layoutX="211.0" layoutY="99.0" mnemonicParsing="false" onAction="#McodeEdit" text="M34" />
+                                    <CheckBox fx:id="M35" layoutX="15.0" layoutY="127.0" mnemonicParsing="false" onAction="#McodeEdit" text="M35" />
+                                    <CheckBox fx:id="M36" layoutX="81.0" layoutY="127.0" mnemonicParsing="false" onAction="#McodeEdit" text="M36" />
+                                    <CheckBox fx:id="M37" layoutX="146.0" layoutY="127.0" mnemonicParsing="false" onAction="#McodeEdit" text="M37" />
+                                    <CheckBox fx:id="M38" layoutX="211.0" layoutY="127.0" mnemonicParsing="false" onAction="#McodeEdit" text="M38" />
+                                    <CheckBox fx:id="M39" layoutX="15.0" layoutY="155.0" mnemonicParsing="false" onAction="#McodeEdit" text="M39" />
+                                    <CheckBox fx:id="M40" layoutX="81.0" layoutY="155.0" mnemonicParsing="false" onAction="#McodeEdit" text="M40" />
+                                    <CheckBox fx:id="M41" layoutX="146.0" layoutY="155.0" mnemonicParsing="false" onAction="#McodeEdit" text="M41" />
+                                    <CheckBox fx:id="M42" layoutX="211.0" layoutY="155.0" mnemonicParsing="false" onAction="#McodeEdit" text="M42" />
+                                    <CheckBox fx:id="M43" layoutX="15.0" layoutY="183.0" mnemonicParsing="false" onAction="#McodeEdit" text="M43" />
+                                    <CheckBox fx:id="M44" layoutX="81.0" layoutY="183.0" mnemonicParsing="false" onAction="#McodeEdit" text="M44" />
+                                    <CheckBox fx:id="M45" layoutX="146.0" layoutY="183.0" mnemonicParsing="false" onAction="#McodeEdit" text="M45" />
+                                    <CheckBox fx:id="M46" layoutX="211.0" layoutY="183.0" mnemonicParsing="false" onAction="#McodeEdit" text="M46" />
+                                    <CheckBox fx:id="M47" layoutX="15.0" layoutY="211.0" mnemonicParsing="false" onAction="#McodeEdit" text="M47" />
+                                    <CheckBox fx:id="M48" layoutX="146.0" layoutY="211.0" mnemonicParsing="false" onAction="#McodeEdit" text="M48" />
+                                    <CheckBox fx:id="M49" layoutX="211.0" layoutY="211.0" mnemonicParsing="false" onAction="#McodeEdit" text="M49" />
+                                    <CheckBox fx:id="M50" layoutX="15.0" layoutY="239.0" mnemonicParsing="false" onAction="#McodeEdit" text="M50" />
+                                    <CheckBox fx:id="M51" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#McodeEdit" text="M51" />
+                                    <CheckBox fx:id="M52" layoutX="81.0" layoutY="15.0" mnemonicParsing="false" onAction="#McodeEdit" text="M52" />
+                                    <CheckBox fx:id="M53" layoutX="146.0" layoutY="15.0" mnemonicParsing="false" onAction="#McodeEdit" text="M53" />
+                                    <CheckBox fx:id="M54" layoutX="211.0" layoutY="15.0" mnemonicParsing="false" onAction="#McodeEdit" text="M54" />
+                                    <CheckBox fx:id="M55" layoutX="15.0" layoutY="43.0" mnemonicParsing="false" onAction="#McodeEdit" text="M55" />
+                                    <CheckBox fx:id="M56" layoutX="81.0" layoutY="43.0" mnemonicParsing="false" onAction="#McodeEdit" text="M56" />
+                                    <CheckBox fx:id="M57" layoutX="146.0" layoutY="43.0" mnemonicParsing="false" onAction="#McodeEdit" text="M57" />
+                                    <CheckBox fx:id="M58" layoutX="211.0" layoutY="43.0" mnemonicParsing="false" onAction="#McodeEdit" text="M58" />
+                                    <CheckBox fx:id="M59" layoutX="15.0" layoutY="71.0" mnemonicParsing="false" onAction="#McodeEdit" text="M59" />
+                                    <CheckBox fx:id="M60" layoutX="81.0" layoutY="71.0" mnemonicParsing="false" onAction="#McodeEdit" text="M60" />
+                                    <CheckBox fx:id="M61" layoutX="146.0" layoutY="71.0" mnemonicParsing="false" onAction="#McodeEdit" text="M61" />
+                                    <CheckBox fx:id="M62" layoutX="211.0" layoutY="71.0" mnemonicParsing="false" onAction="#McodeEdit" text="M62" />
+                                    <CheckBox fx:id="M63" layoutX="15.0" layoutY="99.0" mnemonicParsing="false" onAction="#McodeEdit" text="M63" />
+                                    <CheckBox fx:id="M64" layoutX="81.0" layoutY="99.0" mnemonicParsing="false" onAction="#McodeEdit" text="M64" />
+                                    <CheckBox fx:id="M65" layoutX="146.0" layoutY="99.0" mnemonicParsing="false" onAction="#McodeEdit" text="M65" />
+                                    <CheckBox fx:id="M66" layoutX="211.0" layoutY="99.0" mnemonicParsing="false" onAction="#McodeEdit" text="M66" />
+                                    <CheckBox fx:id="M67" layoutX="15.0" layoutY="127.0" mnemonicParsing="false" onAction="#McodeEdit" text="M67" />
+                                    <CheckBox fx:id="M68" layoutX="81.0" layoutY="127.0" mnemonicParsing="false" onAction="#McodeEdit" text="M68" />
+                                    <CheckBox fx:id="M69" layoutX="146.0" layoutY="127.0" mnemonicParsing="false" onAction="#McodeEdit" text="M69" />
+                                    <CheckBox fx:id="M70" layoutX="211.0" layoutY="127.0" mnemonicParsing="false" onAction="#McodeEdit" text="M70" />
+                                    <CheckBox fx:id="M71" layoutX="15.0" layoutY="155.0" mnemonicParsing="false" onAction="#McodeEdit" text="M71" />
+                                    <CheckBox fx:id="M72" layoutX="81.0" layoutY="155.0" mnemonicParsing="false" onAction="#McodeEdit" text="M72" />
+                                    <CheckBox fx:id="M73" layoutX="146.0" layoutY="155.0" mnemonicParsing="false" onAction="#McodeEdit" text="M73" />
+                                    <CheckBox fx:id="M74" layoutX="211.0" layoutY="155.0" mnemonicParsing="false" onAction="#McodeEdit" text="M74" />
+                                    <CheckBox fx:id="M75" layoutX="15.0" layoutY="183.0" mnemonicParsing="false" onAction="#McodeEdit" text="M75" />
+                                    <CheckBox fx:id="M76" layoutX="81.0" layoutY="183.0" mnemonicParsing="false" onAction="#McodeEdit" text="M76" />
+                                    <CheckBox fx:id="M77" layoutX="146.0" layoutY="183.0" mnemonicParsing="false" onAction="#McodeEdit" text="M77" />
+                                    <CheckBox fx:id="M78" layoutX="211.0" layoutY="183.0" mnemonicParsing="false" onAction="#McodeEdit" text="M78" />
+                                    <CheckBox fx:id="M79" layoutX="15.0" layoutY="211.0" mnemonicParsing="false" onAction="#McodeEdit" text="M79" />
+                                    <CheckBox fx:id="M80" layoutX="81.0" layoutY="211.0" mnemonicParsing="false" onAction="#McodeEdit" text="M80" />
+                                    <CheckBox fx:id="M81" layoutX="146.0" layoutY="211.0" mnemonicParsing="false" onAction="#McodeEdit" text="M81" />
+                                    <CheckBox fx:id="M82" layoutX="211.0" layoutY="211.0" mnemonicParsing="false" onAction="#McodeEdit" text="M82" />
+                                    <CheckBox fx:id="M83" layoutX="15.0" layoutY="239.0" mnemonicParsing="false" onAction="#McodeEdit" text="M83" />
+                                    <CheckBox fx:id="M84" layoutX="81.0" layoutY="239.0" mnemonicParsing="false" onAction="#McodeEdit" text="M84" />
+                                    <CheckBox fx:id="M85" layoutX="146.0" layoutY="239.0" mnemonicParsing="false" onAction="#McodeEdit" text="M85" />
+                                    <CheckBox fx:id="M86" layoutX="211.0" layoutY="239.0" mnemonicParsing="false" onAction="#McodeEdit" text="M86" />
+                                    <CheckBox fx:id="M87" layoutX="15.0" layoutY="267.0" mnemonicParsing="false" onAction="#McodeEdit" text="M87" />
+                                    <CheckBox fx:id="M88" layoutX="81.0" layoutY="267.0" mnemonicParsing="false" onAction="#McodeEdit" text="M88" />
+                                    <CheckBox fx:id="M89" layoutX="146.0" layoutY="267.0" mnemonicParsing="false" onAction="#McodeEdit" text="M89" />
+                                    <CheckBox fx:id="M90" layoutX="211.0" layoutY="267.0" mnemonicParsing="false" onAction="#McodeEdit" text="M90" />
+                                    <CheckBox fx:id="M91" layoutX="15.0" layoutY="295.0" mnemonicParsing="false" onAction="#McodeEdit" text="M91" />
+                                    <CheckBox fx:id="M92" layoutX="81.0" layoutY="295.0" mnemonicParsing="false" onAction="#McodeEdit" text="M92" />
+                                    <CheckBox fx:id="M93" layoutX="146.0" layoutY="295.0" mnemonicParsing="false" onAction="#McodeEdit" text="M93" />
+                                    <CheckBox fx:id="M94" layoutX="211.0" layoutY="295.0" mnemonicParsing="false" onAction="#McodeEdit" text="M94" />
+                                    <CheckBox fx:id="M95" layoutX="15.0" layoutY="323.0" mnemonicParsing="false" onAction="#McodeEdit" text="M95" />
+                                    <CheckBox fx:id="M96" layoutX="81.0" layoutY="323.0" mnemonicParsing="false" onAction="#McodeEdit" text="M96" />
+                                    <CheckBox fx:id="M97" layoutX="146.0" layoutY="323.0" mnemonicParsing="false" onAction="#McodeEdit" text="M97" />
+                                    <CheckBox fx:id="M98" layoutX="211.0" layoutY="323.0" mnemonicParsing="false" onAction="#McodeEdit" text="M98" />
+                                    <CheckBox fx:id="M99" layoutX="15.0" layoutY="351.0" mnemonicParsing="false" onAction="#McodeEdit" text="M99" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </FlowPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

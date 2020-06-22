@@ -1,0 +1,2 @@
+ java -cp UDP_Testing_Code.jar com.pgx.java.socket.UDPClient
+ .\/bin/java -cp UDP_Testing_Code.jar com.pgx.java.socket.UDPClient

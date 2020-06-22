@@ -43,7 +43,7 @@ public class UDPClient {
             DatagramPacket p = new DatagramPacket(b, b.length, serverAddress, targetPort);
             this.udpSocket.send(p); // Sends the packet
             //Debug messages
-            //System.out.println("DEBUG:" + Message + "Sent to:" + serverAddress.toString() + ":" + targetPort + "From Local Address:" + udpSocket.getLocalSocketAddress().toString());
+            System.out.println("DEBUG:" + Message + "Sent to:" + serverAddress.toString() + ":" + targetPort + "From Local Address:" + udpSocket.getLocalSocketAddress().toString());
         } catch (Exception ex) {
             //Exception handling code
             System.out.println(ex.toString());
